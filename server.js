@@ -8,6 +8,11 @@ const corsOptions = {
   origin: ['http://localhost:5173'],
   credentials: true,
 };
+app.use(cors({
+  origin: ['https://notesapptimoteo.netlify.app', 'http://localhost:5173'],
+  methods: ['GET', 'POST', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+}));
 app.use(cors(corsOptions));
 app.use(express.json());
 
